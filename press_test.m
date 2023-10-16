@@ -1,0 +1,1 @@
+brick.TouchPressed(1)
