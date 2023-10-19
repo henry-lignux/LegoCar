@@ -16,8 +16,13 @@ while 1
     % When the car is further than min_distance, it moves forward
     while distance >= min_distance 
         distance = brick.UltrasonicDist(1);
-        brick.MoveMotor('A', -1 * speed * w_coefficient);
-        brick.MoveMotor('B', -1 * speed);
+	if brick.TouchPressed(2)
+ 		brick.MoveMotor('A', -1 * speed * w_coefficient);
+        	brick.MoveMotor('B', -1 * (speed + 10));
+	else
+        	brick.MoveMotor('A', -1 * speed * w_coefficient);
+        	brick.MoveMotor('B', -1 * speed);
+	end
     end
     % When the car is less far than min_distance
     while distance < min_distance
