@@ -7,7 +7,7 @@ while 1
   if (distance > 15)
     brick.MoveMotor('B', -50);
     display(distance);
-  else if (distance < 15)
+  elseif (distance < 15)
     brick.MoveMotor('AB', -50);
     display(distance);
 end
